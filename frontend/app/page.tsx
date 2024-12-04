@@ -3,18 +3,19 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export const dynamic = 'force-dynamic'
-export const revalidate = 0
 
 export default async function Home() {
-  const supabase = createServerComponentClient({ cookies })
+  try {
+    const supabase = createServerComponentClient({ cookies })
+    const { data: { session } } = await supabase.auth.getSession()
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
-
-  if (!session) {
+    if (!session) {
+      redirect('/auth')
+    } else {
+      redirect('/dashboard')
+    }
+  } catch (error) {
+    console.error('Error in root page:', error)
     redirect('/auth')
   }
-
-  redirect('/dashboard')
 }
