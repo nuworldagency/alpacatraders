@@ -10,7 +10,9 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:8080/api/:path*'
+        destination: process.env.NODE_ENV === 'development' 
+          ? 'http://localhost:8080/api/:path*'
+          : `https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co/api/:path*`
       }
     ]
   },
