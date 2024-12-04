@@ -1,52 +1,67 @@
-# Python
+# Dependencies
+node_modules/
 __pycache__/
+*.pyc
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+.next/
+build/
+dist/
+out/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# Testing
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Platform specific
+.vercel/
+.replit
+.upm/
+.config/
+.npm/
+
+# Project specific
+TradingView-API-main/
+TradingView-API-main.zip
+streamlit/
+
+# Python specific
 *.py[cod]
 *$py.class
 *.so
 .Python
 env/
-build/
 develop-eggs/
-dist/
-downloads/
 eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
 *.egg-info/
 .installed.cfg
 *.egg
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Node
-node_modules/
-.next/
-out/
-build
-.DS_Store
-*.pem
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.env*.local
-.vercel
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Environment
-.env
-.venv
-venv/
-ENV/
-
-# Misc
-.DS_Store
-*.log
-
-.vercel
+# Node specific
+.env.development.local
+.env.test.local
+.env.production.local
+.pnpm-debug.log*

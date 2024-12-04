@@ -1,0 +1,14 @@
+{
+  "name": "tradeviewpro",
+  "version": "1.0.0",
+  "description": "TradeViewPro - Cryptocurrency Trading Platform",
+  "scripts": {
+    "install-deps": "cd frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "build": "cd frontend && npm run build",
+    "start": "bash run.sh",
+    "dev": "bash run.sh"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
